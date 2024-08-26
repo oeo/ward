@@ -1,0 +1,16 @@
+{
+  "name": "ward",
+  "version": "1.0.0",
+  "description": "a portable vault using bash and gpg",
+  "scripts": {
+    "encrypt": "bash bin/encrypt.sh",
+    "decrypt": "bash bin/decrypt.sh",
+    "totp": "bash bin/totp.sh",
+    "test": "bash bin/test.sh",
+    "readme": "bash _readme.sh",
+    "verify": "bash bin/verify_integrity.sh"
+  },
+  "author": "taky@taky.com",
+  "license": "MIT"
+}
+
