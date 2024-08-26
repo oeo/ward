@@ -39,14 +39,16 @@ yarn decrypt # or ./bin/decrypt.sh
 
 the default vault decryption password is `letmein`.
 
-## simple usage
-<img src="./.readme/encrypt.png">
+<img src="./.readme/decrypt.png">
 
+## simple usage
 ```
 mkdir vault
 echo 123 > vault/123.txt
 yarn encrypt # or ./bin/encrypt.sh
 ```
+
+<img src="./.readme/encrypt.png">
 
 here are the yarn commands you'll be using:
 
@@ -71,9 +73,9 @@ here are the yarn commands you'll be using:
 1. your files will pop back into the `vault` folder
 
 ### integrity verification
-<img src="./.readme/integrity.png">
-
 run `yarn verify` to ensure the archive hasn't been tampered with
+
+<img src="./.readme/integrity.png">
 
 ### two-factor auth functionality
 ```
@@ -81,11 +83,11 @@ yarn totp <totp_secret>
 ```
 
 ### running tests
-<img src="./.readme/test.png">
-
 ```
 yarn test
 ```
+
+<img src="./.readme/test.png">
 
 ## notes
 
