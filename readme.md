@@ -1,7 +1,7 @@
 # ward: a personal vault
 
-ward is nothing fancy, just a bunch of bash scripts that'll keep your secret files safe but also as accessible as you'd like by using git.
-consider it digital safe for your sensitive files. it encrypts your stuff, keeps it integrity-checked, and even throws in some two-factor auth stuff for good measure. it's pretty straightforward:
+ward is a bunch of bash scripts that will keep your secret files safe but also as accessible as you'd like. i designed it to use it dangerously within git.
+consider it digital safe for your sensitive files. it encrypts your stuff, keeps it integrity-checked, it is written in bash and it's pretty straightforward:
 
 - encrypts your files using gpg
 - lets you check if someone's messed with your encrypted stuff
@@ -11,20 +11,13 @@ consider it digital safe for your sensitive files. it encrypts your stuff, keeps
 
 make sure you've got these installed:
 
-- bash
 - gpg
 - oath-toolkit (for totp)
 - bc (basic math and comes with most systems)
 
 ## getting started
 
-1. clone the repository
-```
-git clone https://github.com/oeo/ward.git
-cd ward
-```
-
-2. install the essentials:
+1. install the essentials:
 ```
 # ubuntu/debian
 sudo apt-get install gnupg oath-toolkit bc
@@ -33,8 +26,21 @@ sudo apt-get install gnupg oath-toolkit bc
 brew install gnupg oath-toolkit
 ```
 
-## simple usage
+2. clone the repository
+```
+git clone https://github.com/oeo/ward.git
+cd ward
+```
 
+3. decrypt the example vault.tar.gz.gpg
+```
+yarn decrypt # or ./bin/decrypt.sh
+```
+
+the default vault decryption password is `letmein`.
+
+## simple usage
+<img src="./.readme/encrypt.png">
 ```
 mkdir vault
 echo 123 > vault/123.txt
@@ -64,12 +70,18 @@ here are the yarn commands you'll be using:
 1. your files will pop back into the `vault` folder
 
 ### integrity verification
-
+<img src="./.readme/integrity.png">
 run `yarn verify` to ensure the archive hasn't been tampered with
 
 ### two-factor auth functionality
 ```
 yarn totp <totp_secret>
+```
+
+### running tests
+<img src="./.readme/test.png">
+```
+yarn test
 ```
 
 ## notes
